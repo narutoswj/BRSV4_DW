@@ -1,0 +1,2332 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/6/2016 10:42:57 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-DELL"
+  DTS:CreatorName="LAPTOP-DELL\JoeyShen"
+  DTS:DTSID="{C16348F3-69E3-4A0A-B5B6-24F17DBB82A1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.900.80"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{D4DB191D-2C9B-4D94-B352-C1FF0CB24440}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FC4BA7BB-34DD-4FA0-93E4-742D64FCA583}"
+      DTS:ObjectName="121.41.51.49.BRS_V4_TEST.shenwj">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=121.41.51.49;User ID=shenwj;Initial Catalog=BRS_V4_TEST;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACV4fRX9ysS/FI4OySsYpWmfSdKItl6H7Otb9oObXdhaQAAAAAOgAAAAAIAACAAAAAciaIUyOo/s6vEofdMQQrcJkM7U/ib1B8sFcbbtAPjJCAAAACxnl/SwwEd5mFVvvRa4JMToJW8hsH5++Z0wNuB0HWrQ0AAAADBGXD/6dRDOv/utkwKqV6ZbVlJrd+E+ll3saAr9HUHjZc++Ldty7IlNlcXuOk6HBcQL1njsf93wRBln1hkbUjC</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9B573176-5A90-45DE-8350-8399B4A591F4}"
+      DTS:ObjectName="LocalHost.Crabyter_DW.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=Crabyter_DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADWgwmuMv0MSz7jWHsrQdAceTnw82OFZEbjpRne3+QmLQAAAAAOgAAAAAIAACAAAACHq4K8xtr14JVr7txw+L6P/8kKvRMzVH8f4jXJE2BrBiAAAABpcHU3tPftSFEbAxyRXL1xLojbq0NHCjkYiZvD+EsqSEAAAAACrp14UF+TBsoa3P2Y7bfykrpuUqlI0N11NRxxpncEtueXG7k7y1LO1csLq36J9+hdWK0H2hnRZFuKfoKiunmb</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Study Related"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="序列容器"
+      DTS:DTSID="{2E19C3D9-EC2E-4949-82DF-E879A372B710}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Study Related">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Study Related\Fielddata"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{0E7E4D7C-16AC-489E-8029-41AB7E0910F3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fielddata"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Study Related\Fielddata\OLE DB 源"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB 源"
+                  name="OLE DB 源"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[T_fielddata]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="包含要执行的 SQL 命令的变量。"
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="SQL 命令中的参数与变量之间的映射。"
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Study Related\Fielddata\OLE DB 源.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      connectionManagerRefId="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出]"
+                      name="OLE DB 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_patient_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Study_patient_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_patient_id]"
+                          name="Study_patient_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Study_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_id]"
+                          name="Study_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Patient_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Patient_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Patient_id]"
+                          name="Patient_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_crf_field_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Study_crf_field_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_crf_field_id]"
+                          name="Study_crf_field_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Df_tableid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Df_tableid]"
+                          length="100"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Df_tableid]"
+                          name="Df_tableid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Df_fieldid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Df_fieldid]"
+                          length="100"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Df_fieldid]"
+                          name="Df_fieldid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldkind]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldkind]"
+                          length="10"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldkind]"
+                          name="Fieldkind"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Irow_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Irow_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Irow_id]"
+                          name="Irow_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldcode]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldcode]"
+                          length="100"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldcode]"
+                          name="Fieldcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldname]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldname]"
+                          length="500"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldname]"
+                          name="Fieldname"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldname_alias]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldname_alias]"
+                          length="500"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldname_alias]"
+                          name="Fieldname_alias"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fielddatatype]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fielddatatype]"
+                          length="10"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fielddatatype]"
+                          name="Fielddatatype"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldunit]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldunit]"
+                          length="50"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldunit]"
+                          name="Fieldunit"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvalue]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldvalue]"
+                          length="500"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvalue]"
+                          name="Fieldvalue"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvaluestr]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldvaluestr]"
+                          length="4000"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvaluestr]"
+                          name="Fieldvaluestr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvalueoptions]"
+                          codePage="936"
+                          dataType="text"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldvalueoptions]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvalueoptions]"
+                          name="Fieldvalueoptions"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isencrypt]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Isencrypt]"
+                          length="1"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isencrypt]"
+                          name="Isencrypt"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Isdeleted]"
+                          length="1"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isdeleted]"
+                          name="Isdeleted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          name="Createtime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          name="Createuserid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          name="Updatetime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          name="Updateuserid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Status]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Status]"
+                          length="1"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Uploadkey]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Uploadkey]"
+                          length="50"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Uploadkey]"
+                          name="Uploadkey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Is_auto_upload]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Is_auto_upload]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Is_auto_upload]"
+                          name="Is_auto_upload"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Study_patient_id]"
+                          dataType="i4"
+                          name="Study_patient_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Study_id]"
+                          dataType="i4"
+                          name="Study_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Patient_id]"
+                          dataType="i4"
+                          name="Patient_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Study_crf_field_id]"
+                          dataType="i4"
+                          name="Study_crf_field_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Df_tableid]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Df_tableid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Df_fieldid]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Df_fieldid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldkind]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          name="Fieldkind" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Irow_id]"
+                          dataType="i4"
+                          name="Irow_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Fieldcode" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldname]"
+                          dataType="wstr"
+                          length="500"
+                          name="Fieldname" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldname_alias]"
+                          dataType="wstr"
+                          length="500"
+                          name="Fieldname_alias" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fielddatatype]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          name="Fielddatatype" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldunit]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Fieldunit" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldvalue]"
+                          dataType="wstr"
+                          length="500"
+                          name="Fieldvalue" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldvaluestr]"
+                          dataType="wstr"
+                          length="4000"
+                          name="Fieldvaluestr" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Fieldvalueoptions]"
+                          codePage="936"
+                          dataType="text"
+                          name="Fieldvalueoptions" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Isencrypt]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isencrypt" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isdeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          dataType="dbTimeStamp"
+                          name="Createtime" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          dataType="i4"
+                          name="Createuserid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          name="Updatetime" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          dataType="i4"
+                          name="Updateuserid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Status]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Uploadkey]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Uploadkey" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Is_auto_upload]"
+                          dataType="i4"
+                          name="Is_auto_upload" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出]"
+                      isErrorOut="true"
+                      name="OLE DB 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Study_patient_id]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Study_patient_id]"
+                          name="Study_patient_id" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Study_id]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Study_id]"
+                          name="Study_id" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Patient_id]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Patient_id]"
+                          name="Patient_id" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Study_crf_field_id]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Study_crf_field_id]"
+                          name="Study_crf_field_id" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Df_tableid]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Df_tableid]"
+                          name="Df_tableid" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Df_fieldid]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Df_fieldid]"
+                          name="Df_fieldid" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldkind]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldkind]"
+                          name="Fieldkind" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Irow_id]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Irow_id]"
+                          name="Irow_id" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldcode]"
+                          name="Fieldcode" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldname]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldname]"
+                          name="Fieldname" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldname_alias]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldname_alias]"
+                          name="Fieldname_alias" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fielddatatype]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fielddatatype]"
+                          name="Fielddatatype" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldunit]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldunit]"
+                          name="Fieldunit" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldvalue]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldvalue]"
+                          name="Fieldvalue" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldvaluestr]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldvaluestr]"
+                          name="Fieldvaluestr" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldvalueoptions]"
+                          codePage="936"
+                          dataType="text"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Fieldvalueoptions]"
+                          name="Fieldvalueoptions" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Isencrypt]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Isencrypt]"
+                          name="Isencrypt" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Isdeleted]"
+                          name="Isdeleted" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          name="Createtime" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          name="Createuserid" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          name="Updatetime" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          name="Updateuserid" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Status]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Uploadkey]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Uploadkey]"
+                          name="Uploadkey" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Is_auto_upload]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Is_auto_upload]"
+                          name="Is_auto_upload" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Study Related\Fielddata\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[T_Fielddata]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Study Related\Fielddata\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Id]"
+                          cachedDataType="i4"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Study_patient_id]"
+                          cachedDataType="i4"
+                          cachedName="Study_patient_id"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Study_patient_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_patient_id]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Study_id]"
+                          cachedDataType="i4"
+                          cachedName="Study_id"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Study_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_id]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Patient_id]"
+                          cachedDataType="i4"
+                          cachedName="Patient_id"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Patient_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Patient_id]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Study_crf_field_id]"
+                          cachedDataType="i4"
+                          cachedName="Study_crf_field_id"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Study_crf_field_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Study_crf_field_id]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Df_tableid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Df_tableid"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Df_tableid]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Df_tableid]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Df_fieldid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Df_fieldid"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Df_fieldid]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Df_fieldid]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldkind]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Fieldkind"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldkind]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldkind]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Irow_id]"
+                          cachedDataType="i4"
+                          cachedName="Irow_id"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Irow_id]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Irow_id]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldcode]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Fieldcode"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldcode]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldcode]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldname]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="Fieldname"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldname]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldname]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldname_alias]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="Fieldname_alias"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldname_alias]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldname_alias]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fielddatatype]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Fielddatatype"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fielddatatype]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fielddatatype]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldunit]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Fieldunit"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldunit]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldunit]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldvalue]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="Fieldvalue"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldvalue]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvalue]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldvaluestr]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="Fieldvaluestr"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldvaluestr]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvaluestr]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Fieldvalueoptions]"
+                          cachedCodepage="936"
+                          cachedDataType="text"
+                          cachedName="Fieldvalueoptions"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldvalueoptions]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Fieldvalueoptions]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Isencrypt]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Isencrypt"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Isencrypt]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isencrypt]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Isdeleted]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Isdeleted"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Isdeleted]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isdeleted]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Createtime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Createtime"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createtime]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Createuserid]"
+                          cachedDataType="i4"
+                          cachedName="Createuserid"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createuserid]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Updatetime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Updatetime"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updatetime]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Updateuserid]"
+                          cachedDataType="i4"
+                          cachedName="Updateuserid"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updateuserid]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Status]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Status]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Status]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Uploadkey]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Uploadkey"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Uploadkey]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Uploadkey]" />
+                        <inputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Is_auto_upload]"
+                          cachedDataType="i4"
+                          cachedName="Is_auto_upload"
+                          externalMetadataColumnId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Is_auto_upload]"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出].Columns[Is_auto_upload]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Study_patient_id]"
+                          dataType="i4"
+                          name="Study_patient_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Study_id]"
+                          dataType="i4"
+                          name="Study_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Patient_id]"
+                          dataType="i4"
+                          name="Patient_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Study_crf_field_id]"
+                          dataType="i4"
+                          name="Study_crf_field_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Df_tableid]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Df_tableid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Df_fieldid]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Df_fieldid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldkind]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          name="Fieldkind" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Irow_id]"
+                          dataType="i4"
+                          name="Irow_id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Fieldcode" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldname]"
+                          dataType="wstr"
+                          length="500"
+                          name="Fieldname" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldname_alias]"
+                          dataType="wstr"
+                          length="500"
+                          name="Fieldname_alias" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fielddatatype]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          name="Fielddatatype" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldunit]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Fieldunit" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldvalue]"
+                          dataType="wstr"
+                          length="500"
+                          name="Fieldvalue" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldvaluestr]"
+                          dataType="wstr"
+                          length="4000"
+                          name="Fieldvaluestr" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Fieldvalueoptions]"
+                          codePage="936"
+                          dataType="text"
+                          name="Fieldvalueoptions" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Isencrypt]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isencrypt" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isdeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createtime]"
+                          dataType="dbTimeStamp"
+                          name="Createtime" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createuserid]"
+                          dataType="i4"
+                          name="Createuserid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          name="Updatetime" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updateuserid]"
+                          dataType="i4"
+                          name="Updateuserid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Status]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Uploadkey]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Uploadkey" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Is_auto_upload]"
+                          dataType="i4"
+                          name="Is_auto_upload" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Study Related\Fielddata\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Study Related\Fielddata\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\Fielddata\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Study Related\Fielddata.Paths[OLE DB 源输出]"
+                  endId="Package\Study Related\Fielddata\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="OLE DB 源输出"
+                  startId="Package\Study Related\Fielddata\OLE DB 源.Outputs[OLE DB 源输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Study Related\P_study"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{5A3ABAA0-218D-4AAD-B23B-A0E353977033}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="P_study"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Study Related\P_study\P_study"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB 源"
+                  name="P_study"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[P_study]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="包含要执行的 SQL 命令的变量。"
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="SQL 命令中的参数与变量之间的映射。"
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Study Related\P_study\P_study.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      connectionManagerRefId="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出]"
+                      name="OLE DB 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Custcode]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Custcode]"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Custcode]"
+                          name="Custcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studycode]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studycode]"
+                          length="100"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studycode]"
+                          name="Studycode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studycode02]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studycode02]"
+                          length="100"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studycode02]"
+                          name="Studycode02"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studyname]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studyname]"
+                          length="500"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studyname]"
+                          name="Studyname"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studyname_en]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studyname_en]"
+                          length="500"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studyname_en]"
+                          name="Studyname_en"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studytype]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studytype]"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studytype]"
+                          name="Studytype"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Startdate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Startdate]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Startdate]"
+                          name="Startdate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Enddate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Enddate]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Enddate]"
+                          name="Enddate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Status]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Status]"
+                          length="10"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Status]"
+                          name="Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Hostunit]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Hostunit]"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Hostunit]"
+                          name="Hostunit"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Leaderunit]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Leaderunit]"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Leaderunit]"
+                          name="Leaderunit"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Leaderuser]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Leaderuser]"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Leaderuser]"
+                          name="Leaderuser"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Supervision]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Supervision]"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Supervision]"
+                          name="Supervision"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Croname]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Croname]"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Croname]"
+                          name="Croname"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Versionnum]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Versionnum]"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Versionnum]"
+                          name="Versionnum"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Requirepatcnt]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Requirepatcnt]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Requirepatcnt]"
+                          name="Requirepatcnt"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isarm]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isarm]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isarm]"
+                          name="Isarm"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Ismuiltisite]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Ismuiltisite]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Ismuiltisite]"
+                          name="Ismuiltisite"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isdoubleinput]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isdoubleinput]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isdoubleinput]"
+                          name="Isdoubleinput"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Blindtype]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Blindtype]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Blindtype]"
+                          name="Blindtype"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Randomtype]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Randomtype]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Randomtype]"
+                          name="Randomtype"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Randombysite]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Randombysite]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Randombysite]"
+                          name="Randombysite"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Israndom]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Israndom]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Israndom]"
+                          name="Israndom"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isquery]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isquery]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isquery]"
+                          name="Isquery"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Ismodifyreason]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Ismodifyreason]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Ismodifyreason]"
+                          name="Ismodifyreason"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Description]"
+                          length="500"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Description]"
+                          name="Description"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Islocked]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Islocked]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Islocked]"
+                          name="Islocked"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Istemplate]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Istemplate]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Istemplate]"
+                          name="Istemplate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Iscrffinished]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Iscrffinished]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Iscrffinished]"
+                          name="Iscrffinished"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Issecurity]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Issecurity]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Issecurity]"
+                          name="Issecurity"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Securitymobile]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Securitymobile]"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Securitymobile]"
+                          name="Securitymobile"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isdeleted]"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Isdeleted]"
+                          name="Isdeleted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Clinicalperiod]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Clinicalperiod]"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Clinicalperiod]"
+                          name="Clinicalperiod"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Diseasecode]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Diseasecode]"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Diseasecode]"
+                          name="Diseasecode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Diseasename]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Diseasename]"
+                          length="200"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Diseasename]"
+                          name="Diseasename"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Diseasecomments]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Diseasecomments]"
+                          length="200"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Diseasecomments]"
+                          name="Diseasecomments"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Iconurl]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Iconurl]"
+                          length="200"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Iconurl]"
+                          name="Iconurl"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studyoptions]"
+                          codePage="936"
+                          dataType="text"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studyoptions]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Studyoptions]"
+                          name="Studyoptions"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[IntroductionUrl]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[IntroductionUrl]"
+                          length="100"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[IntroductionUrl]"
+                          name="IntroductionUrl"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          name="Createtime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          name="Createuserid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          name="Updatetime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          name="Updateuserid"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Custcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Custcode" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studycode]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Studycode" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studycode02]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Studycode02" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studyname]"
+                          dataType="wstr"
+                          length="500"
+                          name="Studyname" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studyname_en]"
+                          dataType="wstr"
+                          length="500"
+                          name="Studyname_en" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studytype]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Studytype" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Startdate]"
+                          dataType="dbTimeStamp"
+                          name="Startdate" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Enddate]"
+                          dataType="dbTimeStamp"
+                          name="Enddate" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Status]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Hostunit]"
+                          dataType="wstr"
+                          length="50"
+                          name="Hostunit" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Leaderunit]"
+                          dataType="wstr"
+                          length="50"
+                          name="Leaderunit" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Leaderuser]"
+                          dataType="wstr"
+                          length="50"
+                          name="Leaderuser" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Supervision]"
+                          dataType="wstr"
+                          length="50"
+                          name="Supervision" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Croname]"
+                          dataType="wstr"
+                          length="50"
+                          name="Croname" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Versionnum]"
+                          dataType="wstr"
+                          length="50"
+                          name="Versionnum" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Requirepatcnt]"
+                          dataType="i4"
+                          name="Requirepatcnt" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isarm]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isarm" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Ismuiltisite]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Ismuiltisite" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isdoubleinput]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isdoubleinput" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Blindtype]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Blindtype" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Randomtype]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Randomtype" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Randombysite]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Randombysite" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Israndom]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Israndom" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isquery]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isquery" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Ismodifyreason]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Ismodifyreason" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Description]"
+                          dataType="wstr"
+                          length="500"
+                          name="Description" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Islocked]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Islocked" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Istemplate]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Istemplate" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Iscrffinished]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Iscrffinished" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Issecurity]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Issecurity" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Securitymobile]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Securitymobile" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isdeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Clinicalperiod]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Clinicalperiod" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Diseasecode]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Diseasecode" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Diseasename]"
+                          dataType="wstr"
+                          length="200"
+                          name="Diseasename" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Diseasecomments]"
+                          dataType="wstr"
+                          length="200"
+                          name="Diseasecomments" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Iconurl]"
+                          codePage="936"
+                          dataType="str"
+                          length="200"
+                          name="Iconurl" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Studyoptions]"
+                          codePage="936"
+                          dataType="text"
+                          name="Studyoptions" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[IntroductionUrl]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="IntroductionUrl" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          dataType="dbTimeStamp"
+                          name="Createtime" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          dataType="i4"
+                          name="Createuserid" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          name="Updatetime" />
+                        <externalMetadataColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          dataType="i4"
+                          name="Updateuserid" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出]"
+                      isErrorOut="true"
+                      name="OLE DB 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Custcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Custcode]"
+                          name="Custcode" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studycode]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studycode]"
+                          name="Studycode" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studycode02]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studycode02]"
+                          name="Studycode02" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studyname]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studyname]"
+                          name="Studyname" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studyname_en]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studyname_en]"
+                          name="Studyname_en" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studytype]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studytype]"
+                          name="Studytype" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Startdate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Startdate]"
+                          name="Startdate" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Enddate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Enddate]"
+                          name="Enddate" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Status]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Status]"
+                          name="Status" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Hostunit]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Hostunit]"
+                          name="Hostunit" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Leaderunit]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Leaderunit]"
+                          name="Leaderunit" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Leaderuser]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Leaderuser]"
+                          name="Leaderuser" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Supervision]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Supervision]"
+                          name="Supervision" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Croname]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Croname]"
+                          name="Croname" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Versionnum]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Versionnum]"
+                          name="Versionnum" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Requirepatcnt]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Requirepatcnt]"
+                          name="Requirepatcnt" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isarm]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isarm]"
+                          name="Isarm" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Ismuiltisite]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Ismuiltisite]"
+                          name="Ismuiltisite" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isdoubleinput]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isdoubleinput]"
+                          name="Isdoubleinput" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Blindtype]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Blindtype]"
+                          name="Blindtype" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Randomtype]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Randomtype]"
+                          name="Randomtype" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Randombysite]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Randombysite]"
+                          name="Randombysite" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Israndom]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Israndom]"
+                          name="Israndom" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isquery]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isquery]"
+                          name="Isquery" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Ismodifyreason]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Ismodifyreason]"
+                          name="Ismodifyreason" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Description]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Description]"
+                          name="Description" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Islocked]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Islocked]"
+                          name="Islocked" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Istemplate]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Istemplate]"
+                          name="Istemplate" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Iscrffinished]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Iscrffinished]"
+                          name="Iscrffinished" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Issecurity]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Issecurity]"
+                          name="Issecurity" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Securitymobile]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Securitymobile]"
+                          name="Securitymobile" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Isdeleted]"
+                          name="Isdeleted" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Clinicalperiod]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Clinicalperiod]"
+                          name="Clinicalperiod" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Diseasecode]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Diseasecode]"
+                          name="Diseasecode" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Diseasename]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Diseasename]"
+                          name="Diseasename" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Diseasecomments]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Diseasecomments]"
+                          name="Diseasecomments" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Iconurl]"
+                          codePage="936"
+                          dataType="str"
+                          length="200"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Iconurl]"
+                          name="Iconurl" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studyoptions]"
+                          codePage="936"
+                          dataType="text"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Studyoptions]"
+                          name="Studyoptions" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[IntroductionUrl]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[IntroductionUrl]"
+                          name="IntroductionUrl" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          name="Createtime" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          name="Createuserid" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          name="Updatetime" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          name="Updateuserid" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Study Related\P_study\P_study.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Study Related\P_study"
+          TopLeft="108.833326545027,28.5714229734579" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Study Related\Fielddata"
+          TopLeft="107.999993244807,152.999988045012" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="358,273"
+          Size="358,316"
+          Id="Package\Study Related"
+          TopLeft="61.6666642162536,38.071426626371" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Study Related\P_study">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Study Related\P_study\P_study"
+          TopLeft="470.833314624098,88.214281207445" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Study Related\P_study\P_study">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Study Related\Fielddata">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Study Related\Fielddata\OLE DB 源"
+          TopLeft="572.499977250895,70.571424965956" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Study Related\Fielddata\OLE DB 目标"
+          TopLeft="569.999977350236,197.785704180903" />
+        <EdgeLayout
+          Id="Package\Study Related\Fielddata.Paths[OLE DB 源输出]"
+          TopLeft="640.749977300565,112.571424965956">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85.2142792149469"
+              Start="0,0"
+              End="0,77.7142792149469">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.7142792149469" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Study Related\Fielddata\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Study Related\Fielddata\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
