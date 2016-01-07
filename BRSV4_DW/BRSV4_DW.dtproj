@@ -26,26 +26,26 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-DELL</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAACAAAAAAAQZgAAAAEAACAAAAB+tZwnVps9LVZtBoURR53+8XJ6K8VB9zc3NmHcDgY5BgAAAAAOgAAAAAIAACAAAAApEYBmw/5QpD+QLf6OJtHo+fGeYy43pwn4MI+gNlhrw5AAAAAOZtRAkd5IQvOFjNW3k0EDdccpY1dzdUMsyfCeIBV5QummpjrV667iZ3muYZkMYnFfx3046ldQ9CZiLATnaxM23/jLrOIh0kPxys/hic7KC4vSgXpB5GNvz5O4w2PkSXN7KZvygCwoEQSEz6yi/cABH4ZReTbPp/v90JJdNqOyGfLSglmLhilIa5AZSPijAP1AAAAAIJCTcmn1AglDkhlQrGjvc4aJLJTwZ7rdD83vPqdrydZzD+PEtblmentjfxIvuieeM55Ou2J3DWuHGbXZNMEYzw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAACAAAAAAAQZgAAAAEAACAAAABAOPvmD/fmc1JLiERxAYt8Vmh+U8nVyssS43aOUK2DlQAAAAAOgAAAAAIAACAAAAANwp79cLPNW8gjNIfmzPNR3BEecpLSUuASXjoElWT7KJAAAAALFQdS922eSAlMQwjKdMMqLUmwxJJVLAYDppHMG6T15ozojL/BmAaONVh/ERhhU2faG6iSUhlGb0GgV+xvDfsUKOAHieoPkb2j14Wxiqf05gu96CNhTFZhT1r54JnVKOVHPdM6fs/4hGGDvJiIaftJVihhE33ew3XkqCC3QvfzRsieqYtS6FmOITirJowwrE5AAAAACP1kAD1Fec4ZXR7mdQPbqrUD9FbI7q16T8llU5PjHTy5kBms5Nbh5SKMzgZlkwrLtoOONDPmjLZm6ux1HPiEPg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DimGeo_China.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters />
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="Package.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="DimGeo_China.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{C16348F3-69E3-4A0A-B5B6-24F17DBB82A1}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{309DEEA2-8870-45AA-894A-5D7C73AEF6DC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">DimGeo_China</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D4DB191D-2C9B-4D94-B352-C1FF0CB24440}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{52489634-4F0B-4F11-8FE2-DB17663A69F9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

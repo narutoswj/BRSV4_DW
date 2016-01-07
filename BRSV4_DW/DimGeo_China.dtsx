@@ -1,0 +1,2346 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/6/2016 10:42:57 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-DELL"
+  DTS:CreatorName="LAPTOP-DELL\JoeyShen"
+  DTS:DTSID="{309DEEA2-8870-45AA-894A-5D7C73AEF6DC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.900.80"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="DimGeo_China"
+  DTS:PackageType="5"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{F0B2C5E1-FF2E-4EDD-9149-A0C028BF9211}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FC4BA7BB-34DD-4FA0-93E4-742D64FCA583}"
+      DTS:ObjectName="121.41.51.49.BRS_V4_TEST.shenwj">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=121.41.51.49;User ID=shenwj;Initial Catalog=BRS_V4_TEST;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADf/FXFYPMm9dy8ypGe7U8F3u84chcpPmm2cYwkk9pnegAAAAAOgAAAAAIAACAAAAA6Zb6IF0UTyJHoPZ9j9hj4TdYD1SQyITzzpFoeukNhKiAAAADeGcoSRFVKqdxPal9W5sIHUQ33Se3IC3wmiSlLfYmFpUAAAADm4pq19So+wy0i5n3TNvwVaugrouJfhpPUD5oYh4Q7DVCj7Fe7LEENcZ/lgsMkE8ppysxT/BCr2tfp1gyi1QNM</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9B573176-5A90-45DE-8350-8399B4A591F4}"
+      DTS:ObjectName="LocalHost.Crabyter_DW.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=Crabyter_DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAgXf3l9L3LmGOxCGGNNna9cRjcoueJicSvKxihzQ8+PgAAAAAOgAAAAAIAACAAAACVqo/OWOm9BUQANNFOHzZk1TbFUWR8nn6TeehgPTr0ViAAAADtp7fR7fpNju7E23CegFqCnS0TCQQZ8hnJdi0WOtUIi0AAAABlbMtL4C+njHPlSqzPjG/qWi06M3wSCA5Ox2H9JHIwgvG336//RVhEjI/93HT8WehaInTCDolNRQKYryiqRjQU</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create Geo Dim China"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="数据流任务"
+      DTS:DTSID="{39407678-1C6A-4040-8130-723FCA7DB7B9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Geo Dim China"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Create Geo Dim China\Dim_Geo"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="OLE DB 目标"
+              name="Dim_Geo"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset">[Dim].[Dim_Geo]</property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定当数据源中没有代码页信息时使用的列代码页。"
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Geo Dim China\Dim_Geo.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入]"
+                  errorOrTruncationOperation="插入"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[Provinceid]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="Provinceid"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Provinceid]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[Province]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Province"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Province]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Province]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[Provincepy]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Provincepy"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Provincepy]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provincepy]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[CityId]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="CityId"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[CityId]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[CityId]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[City]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[City]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[Citypy]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="Citypy"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Citypy]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Citypy]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[Districtid]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="Districtid"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Districtid]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtid]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[District]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="District"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[District]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[District]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[Districtpy]"
+                      cachedCodepage="936"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Districtpy"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Districtpy]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtpy]" />
+                    <inputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].Columns[GeoLevel]"
+                      cachedDataType="i4"
+                      cachedName="GeoLevel"
+                      externalMetadataColumnId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[GeoLevel]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[GeoLevel]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Provinceid]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      name="Provinceid" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Province]"
+                      codePage="936"
+                      dataType="str"
+                      length="60"
+                      name="Province" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Provincepy]"
+                      codePage="936"
+                      dataType="str"
+                      length="30"
+                      name="Provincepy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[CityId]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      name="CityId" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[City]"
+                      codePage="936"
+                      dataType="str"
+                      length="60"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Citypy]"
+                      codePage="936"
+                      dataType="str"
+                      length="30"
+                      name="Citypy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Districtid]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      name="Districtid" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[District]"
+                      codePage="936"
+                      dataType="str"
+                      length="60"
+                      name="District" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Districtpy]"
+                      codePage="936"
+                      dataType="str"
+                      length="30"
+                      name="Districtpy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[GeoLevel]"
+                      dataType="i4"
+                      name="GeoLevel" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Create Geo Dim China\Dim_Geo.Outputs[OLE DB 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 目标错误输出"
+                  synchronousInputId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Create Geo Dim China\Dim_Geo.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Create Geo Dim China\Dim_Geo.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Geo Dim China\OLE DB 源"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+              description="OLE DB 源"
+              name="OLE DB 源"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="指定用于打开行集的数据库对象的名称。"
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="指定包含用于打开行集的数据库对象名的变量。"
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="要执行的 SQL 命令。"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Provinceid]
+,[Province]
+,[Provincepy]
+,NUll AS [CityId]
+,NULL AS [City]
+,NULL AS [Citypy]
+,NULL AS [Districtid]
+,NULL AS [District]
+,NULL AS [Districtpy]
+,1 AS [GeoLevel]
+FROM [Crabyter_DW].[dbo].[S_province]
+UNION ALL
+SELECT 
+c.[Provinceid]
+,[Province]
+,[Provincepy]
+,c.[Cityid]
+,c.[City]
+,c.[Citypy]
+,NULL AS [Districtid]
+,NULL AS [District]
+,NULL AS [Districtpy]
+,2 AS [GeoLevel]
+FROM [Crabyter_DW].[dbo].[S_city] c
+LEFT JOIN [Crabyter_DW].[dbo].[S_province] p
+ON c.[Provinceid] = p.[Provinceid]
+UNION ALL
+SELECT 
+ p.[Provinceid]
+,p.[Province]
+,p.[Provincepy]
+,c.[Cityid]
+,c.[City]
+,c.[Citypy]
+,d.[Districtid]
+,d.[District]
+,d.[Districtpy]
+,3 AS [GeoLevel]
+FROM [Crabyter_DW].[dbo].[S_district] d
+LEFT JOIN [Crabyter_DW].[dbo].[S_city] c
+ON d.Cityid = c.Cityid
+LEFT JOIN [Crabyter_DW].[dbo].[S_province] p
+ON c.Provinceid = p.Provinceid</property>
+                <property
+                  dataType="System.String"
+                  description="包含要执行的 SQL 命令的变量。"
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定当数据源中没有代码页信息时使用的列代码页。"
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定用于访问数据库的模式。"
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="SQL 命令中的参数与变量之间的映射。"
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Geo Dim China\OLE DB 源.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                  description="指定用于访问数据库的 OLE DB 运行时连接。"
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出]"
+                  name="OLE DB 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provinceid]"
+                      length="6"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]"
+                      name="Provinceid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Province]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Province]"
+                      length="40"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Province]"
+                      name="Province"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provincepy]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provincepy]"
+                      length="20"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provincepy]"
+                      name="Provincepy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[CityId]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[CityId]"
+                      length="6"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[CityId]"
+                      name="CityId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[City]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Citypy]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Citypy]"
+                      length="25"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Citypy]"
+                      name="Citypy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtid]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtid]"
+                      length="6"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtid]"
+                      name="Districtid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[District]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[District]"
+                      length="60"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[District]"
+                      name="District"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtpy]"
+                      codePage="936"
+                      dataType="str"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtpy]"
+                      length="30"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtpy]"
+                      name="Districtpy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[GeoLevel]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[GeoLevel]"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].Columns[GeoLevel]"
+                      name="GeoLevel"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provinceid]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      name="Provinceid" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Province]"
+                      codePage="936"
+                      dataType="str"
+                      length="40"
+                      name="Province" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provincepy]"
+                      codePage="936"
+                      dataType="str"
+                      length="20"
+                      name="Provincepy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[CityId]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      name="CityId" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[City]"
+                      codePage="936"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Citypy]"
+                      codePage="936"
+                      dataType="str"
+                      length="25"
+                      name="Citypy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtid]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      name="Districtid" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[District]"
+                      codePage="936"
+                      dataType="str"
+                      length="60"
+                      name="District" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtpy]"
+                      codePage="936"
+                      dataType="str"
+                      length="30"
+                      name="Districtpy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[GeoLevel]"
+                      dataType="i4"
+                      name="GeoLevel" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出]"
+                  isErrorOut="true"
+                  name="OLE DB 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provinceid]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provinceid]"
+                      name="Provinceid" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Province]"
+                      codePage="936"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Province]"
+                      name="Province" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provincepy]"
+                      codePage="936"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provincepy]"
+                      name="Provincepy" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[CityId]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[CityId]"
+                      name="CityId" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[City]"
+                      codePage="936"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Citypy]"
+                      codePage="936"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Citypy]"
+                      name="Citypy" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtid]"
+                      codePage="936"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtid]"
+                      name="Districtid" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[District]"
+                      codePage="936"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[District]"
+                      name="District" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtpy]"
+                      codePage="936"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtpy]"
+                      name="Districtpy" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[GeoLevel]"
+                      dataType="i4"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[GeoLevel]"
+                      name="GeoLevel" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Create Geo Dim China.Paths[OLE DB 源输出]"
+              endId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入]"
+              name="OLE DB 源输出"
+              startId="Package\Create Geo Dim China\OLE DB 源.Outputs[OLE DB 源输出]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Geo base table"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="序列容器"
+      DTS:DTSID="{3E843D2C-4F59-43D9-A978-404F27661605}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Geo base table">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Geo base table\S_city"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{6AF74657-A8AF-4686-918B-791995C3DBA8}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="S_city"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Geo base table\S_city\OLE DB 源"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB 源"
+                  name="OLE DB 源"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[S_city]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="包含要执行的 SQL 命令的变量。"
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="SQL 命令中的参数与变量之间的映射。"
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Geo base table\S_city\OLE DB 源.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      connectionManagerRefId="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出]"
+                      name="OLE DB 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Cityid]"
+                          length="6"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Cityid]"
+                          name="Cityid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[City]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[City]"
+                          length="50"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provinceid]"
+                          length="6"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]"
+                          name="Provinceid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Citypy]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Citypy]"
+                          length="25"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Citypy]"
+                          name="Citypy"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Cityid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[City]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Provinceid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Citypy]"
+                          codePage="936"
+                          dataType="str"
+                          length="25"
+                          name="Citypy" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出]"
+                      isErrorOut="true"
+                      name="OLE DB 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Cityid]"
+                          name="Cityid" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[City]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provinceid]"
+                          name="Provinceid" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Citypy]"
+                          codePage="936"
+                          dataType="str"
+                          length="25"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Citypy]"
+                          name="Citypy" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Geo base table\S_city\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[S_city]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Geo base table\S_city\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Id]"
+                          cachedDataType="i4"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Cityid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="Cityid"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Cityid]"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Cityid]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[City]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[City]"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[City]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Provinceid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="Provinceid"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Provinceid]"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Citypy]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="25"
+                          cachedName="Citypy"
+                          externalMetadataColumnId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Citypy]"
+                          lineageId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出].Columns[Citypy]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Cityid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[City]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Provinceid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Citypy]"
+                          codePage="936"
+                          dataType="str"
+                          length="25"
+                          name="Citypy" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Geo base table\S_city\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_city\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_city\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_city\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Geo base table\S_city.Paths[OLE DB 源输出]"
+                  endId="Package\Geo base table\S_city\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="OLE DB 源输出"
+                  startId="Package\Geo base table\S_city\OLE DB 源.Outputs[OLE DB 源输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Geo base table\S_district"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{19C78086-B5FC-4EB2-9FDC-0F664697871C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="S_district"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Geo base table\S_district\OLE DB 源"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB 源"
+                  name="OLE DB 源"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[S_district]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="包含要执行的 SQL 命令的变量。"
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="SQL 命令中的参数与变量之间的映射。"
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Geo base table\S_district\OLE DB 源.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      connectionManagerRefId="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出]"
+                      name="OLE DB 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtid]"
+                          length="6"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtid]"
+                          name="Districtid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[District]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[District]"
+                          length="60"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[District]"
+                          name="District"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Cityid]"
+                          length="6"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Cityid]"
+                          name="Cityid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtpy]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtpy]"
+                          length="30"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtpy]"
+                          name="Districtpy"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Districtid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[District]"
+                          codePage="936"
+                          dataType="str"
+                          length="60"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Cityid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Districtpy]"
+                          codePage="936"
+                          dataType="str"
+                          length="30"
+                          name="Districtpy" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出]"
+                      isErrorOut="true"
+                      name="OLE DB 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtid]"
+                          name="Districtid" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[District]"
+                          codePage="936"
+                          dataType="str"
+                          length="60"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[District]"
+                          name="District" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Cityid]"
+                          name="Cityid" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtpy]"
+                          codePage="936"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Districtpy]"
+                          name="Districtpy" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Geo base table\S_district\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[S_district]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Geo base table\S_district\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Id]"
+                          cachedDataType="i4"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Districtid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="Districtid"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Districtid]"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtid]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[District]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="60"
+                          cachedName="District"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[District]"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[District]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Cityid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="Cityid"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Cityid]"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Cityid]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Districtpy]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Districtpy"
+                          externalMetadataColumnId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Districtpy]"
+                          lineageId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出].Columns[Districtpy]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Districtid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Districtid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[District]"
+                          codePage="936"
+                          dataType="str"
+                          length="60"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Cityid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Cityid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Districtpy]"
+                          codePage="936"
+                          dataType="str"
+                          length="30"
+                          name="Districtpy" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Geo base table\S_district\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_district\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_district\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_district\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Geo base table\S_district.Paths[OLE DB 源输出]"
+                  endId="Package\Geo base table\S_district\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="OLE DB 源输出"
+                  startId="Package\Geo base table\S_district\OLE DB 源.Outputs[OLE DB 源输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Geo base table\S_province"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{D5D26831-4F87-47E5-BEF9-D5A309A53E9F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="S_province"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Geo base table\S_province\OLE DB 源"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB 源"
+                  name="OLE DB 源"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[S_province]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="包含要执行的 SQL 命令的变量。"
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="SQL 命令中的参数与变量之间的映射。"
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Geo base table\S_province\OLE DB 源.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      connectionManagerRefId="Package.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出]"
+                      name="OLE DB 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provinceid]"
+                          length="6"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]"
+                          name="Provinceid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Province]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Province]"
+                          length="40"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Province]"
+                          name="Province"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provincepy]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provincepy]"
+                          length="20"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provincepy]"
+                          name="Provincepy"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Provinceid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Province]"
+                          codePage="936"
+                          dataType="str"
+                          length="40"
+                          name="Province" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Provincepy]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Provincepy" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出]"
+                      isErrorOut="true"
+                      name="OLE DB 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provinceid]"
+                          name="Provinceid" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Province]"
+                          codePage="936"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Province]"
+                          name="Province" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provincepy]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Provincepy]"
+                          name="Provincepy" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Geo base table\S_province\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[S_province]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Geo base table\S_province\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Id]"
+                          cachedDataType="i4"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Provinceid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="6"
+                          cachedName="Provinceid"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Provinceid]"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provinceid]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Province]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="Province"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Province]"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Province]" />
+                        <inputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Provincepy]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Provincepy"
+                          externalMetadataColumnId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Provincepy]"
+                          lineageId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出].Columns[Provincepy]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Provinceid]"
+                          codePage="936"
+                          dataType="str"
+                          length="6"
+                          name="Provinceid" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Province]"
+                          codePage="936"
+                          dataType="str"
+                          length="40"
+                          name="Province" />
+                        <externalMetadataColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Provincepy]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Provincepy" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Geo base table\S_province\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_province\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Geo base table\S_province\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Geo base table\S_province\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Geo base table\S_province.Paths[OLE DB 源输出]"
+                  endId="Package\Geo base table\S_province\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="OLE DB 源输出"
+                  startId="Package\Geo base table\S_province\OLE DB 源.Outputs[OLE DB 源输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Trucate base tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{1C06F666-2734-4E84-99B6-F62649257338}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Trucate base tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9B573176-5A90-45DE-8350-8399B4A591F4}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [Crabyter_DW].[dbo].[S_province]&#xA;TRUNCATE TABLE [Crabyter_DW].[dbo].[S_city]&#xA;TRUNCATE TABLE [Crabyter_DW].[dbo].[S_district]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Dim_Geo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{D4BAEB60-E922-4C8F-860C-E77EB125B232}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Dim_Geo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9B573176-5A90-45DE-8350-8399B4A591F4}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [Crabyter_DW].[Dim].[Dim_Geo]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update geo coordinate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="执行 SQL 任务"
+      DTS:DTSID="{894CCC61-ED1B-44DF-8968-1E0516907603}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update geo coordinate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9B573176-5A90-45DE-8350-8399B4A591F4}"
+          SQLTask:SqlStatementSource="with cte as&#xA;(&#xA;SELECT &#xA;g.[ID]&#xA;,c.[Latitude]&#xA;,c.[Longitude]&#xA;FROM [Crabyter_DW].[Helper].[Coordinate] c&#xA;LEFT JOIN [Crabyter_DW].[Dim].[Dim_Geo] g&#xA;ON g.[Province] = c.[Province]&#xA;AND REPLACE(g.[City],N'市','') = REPLACE(c.[City],N'市','')&#xA;WHERE g.[ID] IS NOT NULL&#xA;)&#xA;UPDATE g&#xA;SET g.[Latitude] = cte.[Latitude],&#xA;g.[Longitude] = cte.[Longitude]&#xA;FROM [Crabyter_DW].[Dim].[Dim_Geo] g&#xA;LEFT JOIN cte ON G.[ID] = cte.[ID]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束]"
+      DTS:CreationName=""
+      DTS:DTSID="{EF0059EB-D97B-42FA-A4D4-BF9384BE941C}"
+      DTS:From="Package\Trucate base tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束"
+      DTS:To="Package\Geo base table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{ED41BBF9-104B-49D4-B976-655B9F78A813}"
+      DTS:From="Package\Geo base table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束 1"
+      DTS:To="Package\Truncate Dim_Geo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C1723911-E125-431D-BF68-264CBBEDF904}"
+      DTS:From="Package\Truncate Dim_Geo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束 2"
+      DTS:To="Package\Create Geo Dim China" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[约束 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{9B180B1E-4A60-4D7A-947A-85A017C21DAE}"
+      DTS:From="Package\Create Geo Dim China"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="约束 3"
+      DTS:To="Package\Update geo coordinate" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Geo base table\S_province"
+          TopLeft="28.6666564676501,40.9999920300079" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Geo base table\S_city"
+          TopLeft="46.9999890724822,106.928560090309" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Geo base table\S_district"
+          TopLeft="33.666656268968,168.214271244955" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="235,265"
+          Size="235,308"
+          Id="Package\Geo base table"
+          TopLeft="325.83332038588,115.142851260244" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Trucate base tables"
+          TopLeft="354.166652593348,30.642855577323" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束]"
+          TopLeft="446.999986489614,72.642855577323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4999956829209"
+              Start="0,0"
+              End="0,34.9999956829209">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9999956829209" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Create Geo Dim China"
+          TopLeft="676.66663977835,358.428553116566" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Truncate Dim_Geo"
+          TopLeft="687.499972681206,246.999987380846" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束 1]"
+          TopLeft="560.83332038588,268.571419320545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.666652295325,0"
+              Start="0,0"
+              End="119.166652295325,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="119.166652295325,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束 2]"
+          TopLeft="775.583306229778,288.999987380846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.4285657357199"
+              Start="0,0"
+              End="0,61.9285657357199">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.9285657357199" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Update geo coordinate"
+          TopLeft="670.833306676813,432.714263607046" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[约束 3]"
+          TopLeft="774.749973227581,400.428553116566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.28571049048"
+              Start="0,0"
+              End="0,24.78571049048">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.78571049048" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Geo base table\S_province">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Geo base table\S_province\OLE DB 源"
+          TopLeft="628,75" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Geo base table\S_province\OLE DB 目标"
+          TopLeft="627,189" />
+        <EdgeLayout
+          Id="Package\Geo base table\S_province.Paths[OLE DB 源输出]"
+          TopLeft="697,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Geo base table\S_city">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Geo base table\S_city\OLE DB 源"
+          TopLeft="601,59" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Geo base table\S_city\OLE DB 目标"
+          TopLeft="595,174" />
+        <EdgeLayout
+          Id="Package\Geo base table\S_city.Paths[OLE DB 源输出]"
+          TopLeft="667.5,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Geo base table\S_district">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Geo base table\S_district\OLE DB 源"
+          TopLeft="658,56" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Geo base table\S_district\OLE DB 目标"
+          TopLeft="663,174" />
+        <EdgeLayout
+          Id="Package\Geo base table\S_district.Paths[OLE DB 源输出]"
+          TopLeft="724.5,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11,76"
+              Start="0,0"
+              End="11,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="7,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,38"
+                    Point2="11,38"
+                    Point3="11,42" />
+                  <mssgle:LineSegment
+                    End="11,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_province\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_province\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_city\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_city\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_district\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_district\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Create Geo Dim China">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Create Geo Dim China\Dim_Geo"
+          TopLeft="520.909090909091,323.636363636364" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Create Geo Dim China\OLE DB 源"
+          TopLeft="550.909090909091,131.818181818182" />
+        <EdgeLayout
+          Id="Package\Create Geo Dim China.Paths[OLE DB 源输出]"
+          TopLeft="617.409090909091,173.818181818182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.9999999999999,149.818181818182"
+              Start="0,0"
+              End="-35.9999999999999,142.318181818182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.9090909090909" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.9090909090909"
+                    Point2="0,74.9090909090909"
+                    Point3="-4,74.9090909090909" />
+                  <mssgle:LineSegment
+                    End="-31.9999999999999,74.9090909090909" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.9999999999999,74.9090909090909"
+                    Point2="-35.9999999999999,74.9090909090909"
+                    Point3="-35.9999999999999,78.9090909090909" />
+                  <mssgle:LineSegment
+                    End="-35.9999999999999,142.318181818182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Geo Dim China\Dim_Geo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Geo Dim China\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
