@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="DimGeo_China"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{F0B2C5E1-FF2E-4EDD-9149-A0C028BF9211}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{B2F9D360-C6C9-4847-9C1E-4290D38B17E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADf/FXFYPMm9dy8ypGe7U8F3u84chcpPmm2cYwkk9pnegAAAAAOgAAAAAIAACAAAAA6Zb6IF0UTyJHoPZ9j9hj4TdYD1SQyITzzpFoeukNhKiAAAADeGcoSRFVKqdxPal9W5sIHUQ33Se3IC3wmiSlLfYmFpUAAAADm4pq19So+wy0i5n3TNvwVaugrouJfhpPUD5oYh4Q7DVCj7Fe7LEENcZ/lgsMkE8ppysxT/BCr2tfp1gyi1QNM</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB6x2CXSrIjBInw9IlF0dE3hX3nQBnRdqCFQOKUnhBn3QAAAAAOgAAAAAIAACAAAACFzvdPvno7Smql3zIsUMMgfJu7J7m3EjaODNPXQhzrayAAAAAOizv9Vpyft9E6JbmhshK+MOevT9EGA/1pmx0pjgvN20AAAAA94IW0zBRSplb7T9mAVqpqhxvf1jdpKOsJxVUomA0btfKYzy2+84r1563cW8DL1j1Q+BHu1u1EvLMpmJ1TP9Gm</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAgXf3l9L3LmGOxCGGNNna9cRjcoueJicSvKxihzQ8+PgAAAAAOgAAAAAIAACAAAACVqo/OWOm9BUQANNFOHzZk1TbFUWR8nn6TeehgPTr0ViAAAADtp7fR7fpNju7E23CegFqCnS0TCQQZ8hnJdi0WOtUIi0AAAABlbMtL4C+njHPlSqzPjG/qWi06M3wSCA5Ox2H9JHIwgvG336//RVhEjI/93HT8WehaInTCDolNRQKYryiqRjQU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACuNXQeKyMN96GKl5rl6v8ZSkgaECTd02CK+i6qe+K94gAAAAAOgAAAAAIAACAAAAAy082llxYwg8zOMeB0gjEGdj0yhu97D3cjGnABybhLoSAAAAD2z2v87EZKuYQOGAADXgCkaHjca7JxZIIFf3x5bhfXwkAAAAB4m+LWrWUFYTI+C2Yv6mHEDXoB/DrlxqItSyn10HaFm33ltpF+v6wU0fXxPZ7GCWSiVbpgg5gRHCxKRNh9ygNu</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -278,6 +278,16 @@
                       refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[GeoLevel]"
                       dataType="i4"
                       name="GeoLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Latitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Create Geo Dim China\Dim_Geo.Inputs[OLE DB 目标输入].ExternalColumns[Longitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="Longitude" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1844,13 +1854,13 @@ ON c.Provinceid = p.Provinceid</property>
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Trucate base tables"
+      DTS:refId="Package\Trucate geo base tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="执行 SQL 任务"
       DTS:DTSID="{1C06F666-2734-4E84-99B6-F62649257338}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Trucate base tables"
+      DTS:ObjectName="Trucate geo base tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -1900,7 +1910,7 @@ ON c.Provinceid = p.Provinceid</property>
       DTS:refId="Package.PrecedenceConstraints[约束]"
       DTS:CreationName=""
       DTS:DTSID="{EF0059EB-D97B-42FA-A4D4-BF9384BE941C}"
-      DTS:From="Package\Trucate base tables"
+      DTS:From="Package\Trucate geo base tables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="约束"
       DTS:To="Package\Geo base table" />
@@ -1942,9 +1952,9 @@ ON c.Provinceid = p.Provinceid</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Geo base table\S_province"
-          TopLeft="28.6666564676501,40.9999920300079" />
+          Size="199,42"
+          Id="Package\Create Geo Dim China"
+          TopLeft="676.66663977835,358.428553116566" />
         <NodeLayout
           Size="115,42"
           Id="Package\Geo base table\S_city"
@@ -1953,6 +1963,10 @@ ON c.Provinceid = p.Provinceid</property>
           Size="139,42"
           Id="Package\Geo base table\S_district"
           TopLeft="33.666656268968,168.214271244955" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Geo base table\S_province"
+          TopLeft="28.6666564676501,40.9999920300079" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -1961,23 +1975,43 @@ ON c.Provinceid = p.Provinceid</property>
           Id="Package\Geo base table"
           TopLeft="325.83332038588,115.142851260244" />
         <NodeLayout
-          Size="193,42"
-          Id="Package\Trucate base tables"
+          Size="217,42"
+          Id="Package\Trucate geo base tables"
           TopLeft="354.166652593348,30.642855577323" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Truncate Dim_Geo"
+          TopLeft="687.499972681206,246.999987380846" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Update geo coordinate"
+          TopLeft="670.833306676813,432.714263607046" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[约束]"
-          TopLeft="446.999986489614,72.642855577323">
+          TopLeft="462.666652593348,72.642855577323">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.4999956829209"
+              EndConnector="-19.333332207468,42.499995682921"
               Start="0,0"
-              End="0,34.9999956829209">
+              End="-19.333332207468,34.999995682921">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.9999956829209" />
+                    End="0,17.2499978414605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2499978414605"
+                    Point2="0,21.2499978414605"
+                    Point3="-4,21.2499978414605" />
+                  <mssgle:LineSegment
+                    End="-15.333332207468,21.2499978414605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.333332207468,21.2499978414605"
+                    Point2="-19.333332207468,21.2499978414605"
+                    Point3="-19.333332207468,25.2499978414605" />
+                  <mssgle:LineSegment
+                    End="-19.333332207468,34.999995682921" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1986,14 +2020,6 @@ ON c.Provinceid = p.Provinceid</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Create Geo Dim China"
-          TopLeft="676.66663977835,358.428553116566" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Truncate Dim_Geo"
-          TopLeft="687.499972681206,246.999987380846" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[约束 1]"
           TopLeft="560.83332038588,268.571419320545">
@@ -2038,10 +2064,6 @@ ON c.Provinceid = p.Provinceid</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Update geo coordinate"
-          TopLeft="670.833306676813,432.714263607046" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[约束 3]"
           TopLeft="774.749973227581,400.428553116566">
@@ -2068,222 +2090,18 @@ ON c.Provinceid = p.Provinceid</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Geo base table\S_province">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Geo base table\S_province\OLE DB 源"
-          TopLeft="628,75" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Geo base table\S_province\OLE DB 目标"
-          TopLeft="627,189" />
-        <EdgeLayout
-          Id="Package\Geo base table\S_province.Paths[OLE DB 源输出]"
-          TopLeft="697,117">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72"
-              Start="0,0"
-              End="0,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Geo base table\S_city">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Geo base table\S_city\OLE DB 源"
-          TopLeft="601,59" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Geo base table\S_city\OLE DB 目标"
-          TopLeft="595,174" />
-        <EdgeLayout
-          Id="Package\Geo base table\S_city.Paths[OLE DB 源输出]"
-          TopLeft="667.5,101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,73"
-              Start="0,0"
-              End="0,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Geo base table\S_district">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Geo base table\S_district\OLE DB 源"
-          TopLeft="658,56" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Geo base table\S_district\OLE DB 目标"
-          TopLeft="663,174" />
-        <EdgeLayout
-          Id="Package\Geo base table\S_district.Paths[OLE DB 源输出]"
-          TopLeft="724.5,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11,76"
-              Start="0,0"
-              End="11,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="7,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7,38"
-                    Point2="11,38"
-                    Point3="11,42" />
-                  <mssgle:LineSegment
-                    End="11,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Geo base table\S_province\OLE DB 源">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Geo base table\S_province\OLE DB 目标">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Geo base table\S_city\OLE DB 源">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Geo base table\S_city\OLE DB 目标">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Geo base table\S_district\OLE DB 源">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Geo base table\S_district\OLE DB 目标">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Create Geo Dim China">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="121,42"
-          Id="Package\Create Geo Dim China\Dim_Geo"
-          TopLeft="520.909090909091,323.636363636364" />
-        <NodeLayout
           Size="133,42"
           Id="Package\Create Geo Dim China\OLE DB 源"
           TopLeft="550.909090909091,131.818181818182" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Create Geo Dim China\Dim_Geo"
+          TopLeft="520.909090909091,323.636363636364" />
         <EdgeLayout
           Id="Package\Create Geo Dim China.Paths[OLE DB 源输出]"
           TopLeft="617.409090909091,173.818181818182">
@@ -2339,6 +2157,210 @@ ON c.Provinceid = p.Provinceid</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Geo base table\S_city">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Geo base table\S_city\OLE DB 源"
+          TopLeft="601,59" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Geo base table\S_city\OLE DB 目标"
+          TopLeft="595,174" />
+        <EdgeLayout
+          Id="Package\Geo base table\S_city.Paths[OLE DB 源输出]"
+          TopLeft="667.5,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_city\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_city\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Geo base table\S_district">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Geo base table\S_district\OLE DB 源"
+          TopLeft="658,56" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Geo base table\S_district\OLE DB 目标"
+          TopLeft="663,174" />
+        <EdgeLayout
+          Id="Package\Geo base table\S_district.Paths[OLE DB 源输出]"
+          TopLeft="724.5,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11,76"
+              Start="0,0"
+              End="11,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
+                  <mssgle:LineSegment
+                    End="7,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,38"
+                    Point2="11,38"
+                    Point3="11,42" />
+                  <mssgle:LineSegment
+                    End="11,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_district\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_district\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Geo base table\S_province">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Geo base table\S_province\OLE DB 源"
+          TopLeft="628,75" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Geo base table\S_province\OLE DB 目标"
+          TopLeft="627,189" />
+        <EdgeLayout
+          Id="Package\Geo base table\S_province.Paths[OLE DB 源输出]"
+          TopLeft="697,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_province\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Geo base table\S_province\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
