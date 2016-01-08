@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="121.41.51.49.BRS_V4_TEST.shenwj"
+  DTS:DTSID="{C275EC6D-752D-4E9B-9CFC-DF4477D1A816}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=121.41.51.49;User ID=shenwj;Initial Catalog=BRS_V4_TEST;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtcRf8T5YE0u369458TX4UAAAAAACAAAAAAAQZgAAAAEAACAAAACp+CBlNC+258HbC5P4TiT+Vw5bYQpfCxzwcHCncK8qIAAAAAAOgAAAAAIAACAAAAAacy8Ys1p//zcfSS/5uoXGj6FPewQOQXRre2isGqh/+IAAAACoEOGrYjY6kgT7i/q7/f8xVN1OIlgxHqIFz2bweMTLd00Hj9i26+ZQv4DNPTqpXT58FGjyXzhWesR05n+ehOax33kHFKvVp8Ei/THPi0pmY+4lXMnOmMWLdU5GBFzqDOUX2IW4jCt6JIKCwQ+HptomodvTa0hR/JRfCmDN0R+xsUAAAAAvsUZ0+P0V/aUXjsJwNtsljwGOlZbnoH4g3fJpEGJF05biU1JZF8JyAR6cEcFMfqQAPvoDq08lRSLQ3XbjoB49</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

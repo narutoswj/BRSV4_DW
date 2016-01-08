@@ -2,13 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>BRSV4_DW</Name>
-    <LastWriteTime>2016-01-07T01:41:31.6041447Z</LastWriteTime>
+    <LastWriteTime>2016-01-08T05:34:54.483456Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimGeo_China.dtsx</Name>
-      <LastWriteTime>2016-01-07T03:02:43.781924Z</LastWriteTime>
+      <LastWriteTime>2016-01-08T05:03:22.6524493Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadSystemRawData.dtsx</Name>
+      <LastWriteTime>2016-01-08T05:46:12.9618085Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
