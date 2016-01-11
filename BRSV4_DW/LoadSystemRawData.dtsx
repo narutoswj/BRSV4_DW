@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="LoadSystemRawData"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{6B0435BA-58CB-482C-9370-D2FCAFE09C83}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{5A3A5B5B-C521-4DB6-AA01-F9B67F5BA0BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2045,7 +2045,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2554,7 +2554,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3309,7 +3309,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4186,7 +4186,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5457,7 +5457,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6131,7 +6131,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6640,7 +6640,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6660,6 +6660,1572 @@
           DTS:To="Package\S_RoleMenu\Loading" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\S_User"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="序列容器"
+      DTS:DTSID="{380523d0-562a-42f7-8831-c89a6495e866}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="S_User">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\S_User\Loading"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{38e3e85d-1c22-4124-af58-d67a811a7a90}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Loading"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\S_User\Loading\OLE DB 源"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB 源"
+                  name="OLE DB 源"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[S_user]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="包含要执行的 SQL 命令的变量。"
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="SQL 命令中的参数与变量之间的映射。"
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\S_User\Loading\OLE DB 源.Connections[OleDbConnection]"
+                      connectionManagerID="{C275EC6D-752D-4E9B-9CFC-DF4477D1A816}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出]"
+                      name="OLE DB 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Username]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Username]"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Username]"
+                          name="Username"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Realname]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Realname]"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Realname]"
+                          name="Realname"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Usertype]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Usertype]"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Usertype]"
+                          name="Usertype"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Custcode]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Custcode]"
+                          length="20"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Custcode]"
+                          name="Custcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Dept_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Dept_id]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Dept_id]"
+                          name="Dept_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Title]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Title]"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Title]"
+                          name="Title"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Password]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Password]"
+                          length="200"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Password]"
+                          name="Password"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Sex]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Sex]"
+                          length="10"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Sex]"
+                          name="Sex"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Tel]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Tel]"
+                          length="20"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Tel]"
+                          name="Tel"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Mobile]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Mobile]"
+                          length="20"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Mobile]"
+                          name="Mobile"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Email]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Email]"
+                          length="100"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Email]"
+                          name="Email"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Address]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Address]"
+                          length="100"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Address]"
+                          name="Address"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Islocked]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Islocked]"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Islocked]"
+                          name="Islocked"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Ischangepwd]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Ischangepwd]"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Ischangepwd]"
+                          name="Ischangepwd"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Remark]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Remark]"
+                          length="100"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Remark]"
+                          name="Remark"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Isdeleted]"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isdeleted]"
+                          name="Isdeleted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Lastlogintime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Lastlogintime]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Lastlogintime]"
+                          name="Lastlogintime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Lastloginip]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Lastloginip]"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Lastloginip]"
+                          name="Lastloginip"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Logintimes]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Logintimes]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Logintimes]"
+                          name="Logintimes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          name="Createtime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          name="Createuserid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          name="Updatetime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          name="Updateuserid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Clientid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Clientid]"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Clientid]"
+                          name="Clientid"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Username]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Username" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Realname]"
+                          dataType="wstr"
+                          length="50"
+                          name="Realname" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Usertype]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Usertype" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Custcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Custcode" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Dept_id]"
+                          dataType="i4"
+                          name="Dept_id" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Title]"
+                          dataType="wstr"
+                          length="50"
+                          name="Title" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Password]"
+                          codePage="936"
+                          dataType="str"
+                          length="200"
+                          name="Password" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Sex]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          name="Sex" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Tel]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Tel" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Mobile]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Mobile" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Email]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Email" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Islocked]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Islocked" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Ischangepwd]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Ischangepwd" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Remark]"
+                          dataType="wstr"
+                          length="100"
+                          name="Remark" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isdeleted" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Lastlogintime]"
+                          dataType="dbTimeStamp"
+                          name="Lastlogintime" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Lastloginip]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Lastloginip" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Logintimes]"
+                          dataType="i4"
+                          name="Logintimes" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          dataType="dbTimeStamp"
+                          name="Createtime" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          dataType="i4"
+                          name="Createuserid" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          name="Updatetime" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          dataType="i4"
+                          name="Updateuserid" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Clientid]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Clientid" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出]"
+                      isErrorOut="true"
+                      name="OLE DB 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Username]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Username]"
+                          name="Username" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Realname]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Realname]"
+                          name="Realname" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Usertype]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Usertype]"
+                          name="Usertype" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Custcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Custcode]"
+                          name="Custcode" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Dept_id]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Dept_id]"
+                          name="Dept_id" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Title]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Title]"
+                          name="Title" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Password]"
+                          codePage="936"
+                          dataType="str"
+                          length="200"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Password]"
+                          name="Password" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Sex]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Sex]"
+                          name="Sex" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Tel]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Tel]"
+                          name="Tel" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Mobile]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Mobile]"
+                          name="Mobile" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Email]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Email]"
+                          name="Email" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Address]"
+                          name="Address" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Islocked]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Islocked]"
+                          name="Islocked" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Ischangepwd]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Ischangepwd]"
+                          name="Ischangepwd" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Remark]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Remark]"
+                          name="Remark" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Isdeleted]"
+                          name="Isdeleted" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Lastlogintime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Lastlogintime]"
+                          name="Lastlogintime" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Lastloginip]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Lastloginip]"
+                          name="Lastloginip" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Logintimes]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Logintimes]"
+                          name="Logintimes" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          name="Createtime" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          name="Createuserid" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          name="Updatetime" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          name="Updateuserid" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Clientid]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Clientid]"
+                          name="Clientid" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\S_User\Loading\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[S_User]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\S_User\Loading\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="{3D5AEF18-E3A8-4A25-B4DF-F1A902D1C569}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Id]"
+                          cachedDataType="i4"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Username]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Username"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Username]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Username]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Realname]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Realname"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Realname]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Realname]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Usertype]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Usertype"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Usertype]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Usertype]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Custcode]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Custcode"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Custcode]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Custcode]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Dept_id]"
+                          cachedDataType="i4"
+                          cachedName="Dept_id"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Dept_id]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Dept_id]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Title]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Title"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Title]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Title]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Password]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="Password"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Password]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Password]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Sex]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Sex"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Sex]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Sex]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Tel]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Tel"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Tel]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Tel]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Mobile]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Mobile"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Mobile]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Mobile]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Email]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Email"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Email]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Email]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Address"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Address]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Address]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Islocked]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Islocked"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Islocked]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Islocked]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Ischangepwd]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Ischangepwd"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Ischangepwd]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Ischangepwd]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Remark]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Remark"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Remark]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Remark]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Isdeleted]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Isdeleted"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Isdeleted]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Isdeleted]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Lastlogintime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Lastlogintime"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Lastlogintime]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Lastlogintime]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Lastloginip]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Lastloginip"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Lastloginip]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Lastloginip]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Logintimes]"
+                          cachedDataType="i4"
+                          cachedName="Logintimes"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Logintimes]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Logintimes]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Createtime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Createtime"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createtime]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Createuserid]"
+                          cachedDataType="i4"
+                          cachedName="Createuserid"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createuserid]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Updatetime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Updatetime"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updatetime]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Updateuserid]"
+                          cachedDataType="i4"
+                          cachedName="Updateuserid"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updateuserid]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]" />
+                        <inputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Clientid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Clientid"
+                          externalMetadataColumnId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Clientid]"
+                          lineageId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Clientid]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Username]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Username" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Realname]"
+                          dataType="wstr"
+                          length="50"
+                          name="Realname" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Usertype]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Usertype" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Custcode]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Custcode" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Dept_id]"
+                          dataType="i4"
+                          name="Dept_id" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Title]"
+                          dataType="wstr"
+                          length="50"
+                          name="Title" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Password]"
+                          codePage="936"
+                          dataType="str"
+                          length="200"
+                          name="Password" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Sex]"
+                          codePage="936"
+                          dataType="str"
+                          length="10"
+                          name="Sex" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Tel]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Tel" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Mobile]"
+                          codePage="936"
+                          dataType="str"
+                          length="20"
+                          name="Mobile" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Email]"
+                          codePage="936"
+                          dataType="str"
+                          length="100"
+                          name="Email" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Islocked]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Islocked" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Ischangepwd]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Ischangepwd" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Remark]"
+                          dataType="wstr"
+                          length="100"
+                          name="Remark" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Isdeleted]"
+                          codePage="936"
+                          dataType="str"
+                          length="1"
+                          name="Isdeleted" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Lastlogintime]"
+                          dataType="dbTimeStamp"
+                          name="Lastlogintime" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Lastloginip]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Lastloginip" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Logintimes]"
+                          dataType="i4"
+                          name="Logintimes" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createtime]"
+                          dataType="dbTimeStamp"
+                          name="Createtime" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createuserid]"
+                          dataType="i4"
+                          name="Createuserid" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          name="Updatetime" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updateuserid]"
+                          dataType="i4"
+                          name="Updateuserid" />
+                        <externalMetadataColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Clientid]"
+                          codePage="936"
+                          dataType="str"
+                          length="50"
+                          name="Clientid" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\S_User\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\S_User\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\S_User\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\S_User\Loading.Paths[OLE DB 源输出]"
+                  endId="Package\S_User\Loading\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="OLE DB 源输出"
+                  startId="Package\S_User\Loading\OLE DB 源.Outputs[OLE DB 源输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\S_User\Truncate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="执行 SQL 任务"
+          DTS:DTSID="{840bde13-0f67-4ef8-9e09-b55f7bcfaee4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="9">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3D5AEF18-E3A8-4A25-B4DF-F1A902D1C569}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [Crabyter_DW].[dbo].[S_User]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\S_User.PrecedenceConstraints[约束]"
+          DTS:CreationName=""
+          DTS:DTSID="{05f42803-6b6a-45fd-b070-6a3faf728177}"
+          DTS:From="Package\S_User\Truncate"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="约束"
+          DTS:To="Package\S_User\Loading" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\S_UserRole"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="序列容器"
+      DTS:DTSID="{68eb19c9-a64c-4916-8d25-aa197459bab4}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="S_UserRole">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\S_UserRole\Loading"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="数据流任务"
+          DTS:DTSID="{c70138d4-b5ff-4870-90c9-e5ef0b7e25b2}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Loading"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\S_UserRole\Loading\OLE DB 源"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB 源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB 源"
+                  name="OLE DB 源"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[dbo].[S_user_role]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="包含要执行的 SQL 命令的变量。"
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="SQL 命令中的参数与变量之间的映射。"
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\S_UserRole\Loading\OLE DB 源.Connections[OleDbConnection]"
+                      connectionManagerID="{C275EC6D-752D-4E9B-9CFC-DF4477D1A816}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[121.41.51.49.BRS_V4_TEST.shenwj]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出]"
+                      name="OLE DB 源输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[User_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[User_id]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[User_id]"
+                          name="User_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Roleid]"
+                          codePage="936"
+                          dataType="str"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Roleid]"
+                          length="30"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Roleid]"
+                          name="Roleid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]"
+                          name="Createtime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]"
+                          name="Createuserid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]"
+                          name="Updatetime"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          errorOrTruncationOperation="转换"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]"
+                          name="Updateuserid"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[User_id]"
+                          dataType="i4"
+                          name="User_id" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Roleid]"
+                          codePage="936"
+                          dataType="str"
+                          length="30"
+                          name="Roleid" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createtime]"
+                          dataType="dbTimeStamp"
+                          name="Createtime" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Createuserid]"
+                          dataType="i4"
+                          name="Createuserid" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          name="Updatetime" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].ExternalColumns[Updateuserid]"
+                          dataType="i4"
+                          name="Updateuserid" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出]"
+                      isErrorOut="true"
+                      name="OLE DB 源错误输出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[User_id]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[User_id]"
+                          name="User_id" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Roleid]"
+                          codePage="936"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Roleid]"
+                          name="Roleid" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createtime]"
+                          name="Createtime" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Createuserid]"
+                          name="Createuserid" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updatetime]"
+                          name="Updatetime" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[Updateuserid]"
+                          name="Updateuserid" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\S_UserRole\Loading\OLE DB 目标"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目标;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目标"
+                  name="OLE DB 目标"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用于打开行集的数据库对象的名称。"
+                      name="OpenRowset">[S_UserRole]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用于打开行集的数据库对象名的变量。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要执行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定当数据源中没有代码页信息时使用的列代码页。"
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字符数据时，强制使用 DefaultCodePage 属性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用于访问数据库的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示是否将为标识列提供的值复制到目标。如果设置为 False，则将在目标中为标识列自动生成值。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指示对于包含 Null 值的列是否将 Null 值插入目标中。如果为 False，则对于包含 Null 值的列会将其默认值插入目标中。仅当启用了快速加载时适用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定将用于快速加载的选项。仅当启用了快速加载时适用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在插入数据期间何时发出提交命令。如果值为 0，则指定在数据插入结束时发出一个提交命令。仅当启用了快速加载时适用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\S_UserRole\Loading\OLE DB 目标.Connections[OleDbConnection]"
+                      connectionManagerID="{3D5AEF18-E3A8-4A25-B4DF-F1A902D1C569}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.Crabyter_DW.sa]"
+                      description="指定用于访问数据库的 OLE DB 运行时连接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目标输入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Id]"
+                          cachedDataType="i4"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[User_id]"
+                          cachedDataType="i4"
+                          cachedName="User_id"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[User_id]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[User_id]" />
+                        <inputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Roleid]"
+                          cachedCodepage="936"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Roleid"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Roleid]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Roleid]" />
+                        <inputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Createtime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Createtime"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createtime]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createtime]" />
+                        <inputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Createuserid]"
+                          cachedDataType="i4"
+                          cachedName="Createuserid"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createuserid]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Createuserid]" />
+                        <inputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Updatetime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Updatetime"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updatetime]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updatetime]" />
+                        <inputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].Columns[Updateuserid]"
+                          cachedDataType="i4"
+                          cachedName="Updateuserid"
+                          externalMetadataColumnId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updateuserid]"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出].Columns[Updateuserid]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[User_id]"
+                          dataType="i4"
+                          name="User_id" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Roleid]"
+                          codePage="936"
+                          dataType="str"
+                          length="30"
+                          name="Roleid" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createtime]"
+                          dataType="dbTimeStamp"
+                          name="Createtime" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Createuserid]"
+                          dataType="i4"
+                          name="Createuserid" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updatetime]"
+                          dataType="dbTimeStamp"
+                          name="Updatetime" />
+                        <externalMetadataColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入].ExternalColumns[Updateuserid]"
+                          dataType="i4"
+                          name="Updateuserid" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\S_UserRole\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目标错误输出"
+                      synchronousInputId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\S_UserRole\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\S_UserRole\Loading\OLE DB 目标.Outputs[OLE DB 目标错误输出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\S_UserRole\Loading.Paths[OLE DB 源输出]"
+                  endId="Package\S_UserRole\Loading\OLE DB 目标.Inputs[OLE DB 目标输入]"
+                  name="OLE DB 源输出"
+                  startId="Package\S_UserRole\Loading\OLE DB 源.Outputs[OLE DB 源输出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\S_UserRole\Truncate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="执行 SQL 任务"
+          DTS:DTSID="{eb8a7ec1-2533-4137-a2e0-cfdfc82f14f0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016 CTP3.2; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="10">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3D5AEF18-E3A8-4A25-B4DF-F1A902D1C569}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [Crabyter_DW].[dbo].[S_UserRole]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\S_UserRole.PrecedenceConstraints[约束]"
+          DTS:CreationName=""
+          DTS:DTSID="{eedc038d-9d83-43a2-96b6-d2e490f219f9}"
+          DTS:From="Package\S_UserRole\Truncate"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="约束"
+          DTS:To="Package\S_UserRole\Loading" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
@@ -6673,43 +8239,6 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="121,42"
-          Id="Package\S_Hospital\Loading"
-          TopLeft="27.9999991059303,94.1428459469159" />
-        <NodeLayout
-          Size="127,42"
-          Id="Package\S_Hospital\Truncate"
-          TopLeft="30.8333265450268,11.928565403637" />
-        <EdgeLayout
-          Id="Package\S_Hospital.PrecedenceConstraints[约束]"
-          TopLeft="91.4166628254786,53.928565403637">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.2142805432789"
-              Start="0,0"
-              End="0,32.7142805432789">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7142805432789" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="202,191"
-          Size="202,234"
-          Id="Package\S_Hospital"
-          TopLeft="139.9999944369,63.1428539169079" />
         <NodeLayout
           Size="121,42"
           Id="Package\S_Customer\Loading"
@@ -6823,6 +8352,43 @@
           TopLeft="144.999994238218,384.35720552595" />
         <NodeLayout
           Size="121,42"
+          Id="Package\S_CustomerManager\Loading"
+          TopLeft="27.9999991059303,94.1428459469159" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\S_CustomerManager\Truncate"
+          TopLeft="30.8333265450268,11.928565403637" />
+        <EdgeLayout
+          Id="Package\S_CustomerManager.PrecedenceConstraints[约束]"
+          TopLeft="91.4166628254786,53.928565403637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2142805432789"
+              Start="0,0"
+              End="0,32.7142805432789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7142805432789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="207,191"
+          Size="207,234"
+          Id="Package\S_CustomerManager"
+          TopLeft="875.925891119758,388.730141651604" />
+        <NodeLayout
+          Size="121,42"
           Id="Package\S_Department\Loading"
           TopLeft="27.9999991059303,94.1428459469159" />
         <NodeLayout
@@ -6858,6 +8424,80 @@
           Size="207,234"
           Id="Package\S_Department"
           TopLeft="391.666651103232,384.365062339237" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\S_Hospital\Loading"
+          TopLeft="27.9999991059303,94.1428459469159" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\S_Hospital\Truncate"
+          TopLeft="30.8333265450268,11.928565403637" />
+        <EdgeLayout
+          Id="Package\S_Hospital.PrecedenceConstraints[约束]"
+          TopLeft="91.4166628254786,53.928565403637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2142805432789"
+              Start="0,0"
+              End="0,32.7142805432789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7142805432789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="202,191"
+          Size="202,234"
+          Id="Package\S_Hospital"
+          TopLeft="139.9999944369,63.1428539169079" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\S_Menu\Loading"
+          TopLeft="27.9999991059303,94.1428459469159" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\S_Menu\Truncate"
+          TopLeft="30.8333265450268,11.928565403637" />
+        <EdgeLayout
+          Id="Package\S_Menu.PrecedenceConstraints[约束]"
+          TopLeft="91.4166628254786,53.928565403637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2142805432789"
+              Start="0,0"
+              End="0,32.7142805432789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7142805432789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="207,191"
+          Size="207,234"
+          Id="Package\S_Menu"
+          TopLeft="1105.11900370556,77.999996015004" />
         <NodeLayout
           Size="121,42"
           Id="Package\S_Role\Loading"
@@ -6934,14 +8574,14 @@
           TopLeft="873.14811345236,76.1111100041676" />
         <NodeLayout
           Size="121,42"
-          Id="Package\S_CustomerManager\Loading"
+          Id="Package\S_User\Loading"
           TopLeft="27.9999991059303,94.1428459469159" />
         <NodeLayout
           Size="127,42"
-          Id="Package\S_CustomerManager\Truncate"
+          Id="Package\S_User\Truncate"
           TopLeft="30.8333265450268,11.928565403637" />
         <EdgeLayout
-          Id="Package\S_CustomerManager.PrecedenceConstraints[约束]"
+          Id="Package\S_User.PrecedenceConstraints[约束]"
           TopLeft="91.4166628254786,53.928565403637">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6967,18 +8607,18 @@
           IsExpanded="True"
           PanelSize="207,191"
           Size="207,234"
-          Id="Package\S_CustomerManager"
-          TopLeft="875.925891119758,388.730141651604" />
+          Id="Package\S_User"
+          TopLeft="1109.02377606479,389.469367857231" />
         <NodeLayout
           Size="121,42"
-          Id="Package\S_Menu\Loading"
+          Id="Package\S_UserRole\Loading"
           TopLeft="27.9999991059303,94.1428459469159" />
         <NodeLayout
           Size="127,42"
-          Id="Package\S_Menu\Truncate"
+          Id="Package\S_UserRole\Truncate"
           TopLeft="30.8333265450268,11.928565403637" />
         <EdgeLayout
-          Id="Package\S_Menu.PrecedenceConstraints[约束]"
+          Id="Package\S_UserRole.PrecedenceConstraints[约束]"
           TopLeft="91.4166628254786,53.928565403637">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7004,88 +8644,24 @@
           IsExpanded="True"
           PanelSize="207,191"
           Size="207,234"
-          Id="Package\S_Menu"
-          TopLeft="1130.95233601237,83.57142430179" />
+          Id="Package\S_UserRole"
+          TopLeft="1342.690444056,388.142837312758" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\S_Hospital\Loading">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\S_Hospital\Loading\OLE DB 源"
-          TopLeft="178.333326247004,72.428567728218" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\S_Hospital\Loading\OLE DB 目标"
-          TopLeft="179.166659547223,181.071419320545" />
-        <EdgeLayout
-          Id="Package\S_Hospital\Loading.Paths[OLE DB 源输出]"
-          TopLeft="248.249992897113,114.428567728218">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66.642851592327"
-              Start="0,0"
-              End="0,59.142851592327">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.142851592327" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_Hospital\Loading\OLE DB 源">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_Hospital\Loading\OLE DB 目标">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\S_Customer\Loading">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\S_Customer\Loading\OLE DB 源"
-          TopLeft="380,86" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="145,42"
           Id="Package\S_Customer\Loading\OLE DB 目标"
           TopLeft="375,189" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_Customer\Loading\OLE DB 源"
+          TopLeft="380,86" />
         <EdgeLayout
           Id="Package\S_Customer\Loading.Paths[OLE DB 源输出]"
           TopLeft="447,128">
@@ -7105,7 +8681,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7141,7 +8719,7 @@
     design-time-name="Package\S_CustomerContract\Loading">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="133,42"
           Id="Package\S_CustomerContract\Loading\OLE DB 源"
@@ -7181,7 +8759,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7217,15 +8797,15 @@
     design-time-name="Package\S_CustomerDepartment\Loading">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\S_CustomerDepartment\Loading\OLE DB 源"
-          TopLeft="390,70" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="145,42"
           Id="Package\S_CustomerDepartment\Loading\OLE DB 目标"
           TopLeft="383,165" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_CustomerDepartment\Loading\OLE DB 源"
+          TopLeft="390,70" />
         <EdgeLayout
           Id="Package\S_CustomerDepartment\Loading.Paths[OLE DB 源输出]"
           TopLeft="456,112">
@@ -7245,7 +8825,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7278,222 +8860,18 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\S_Department\Loading">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\S_Department\Loading\OLE DB 源"
-          TopLeft="330,47" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\S_Department\Loading\OLE DB 目标"
-          TopLeft="300,157" />
-        <EdgeLayout
-          Id="Package\S_Department\Loading.Paths[OLE DB 源输出]"
-          TopLeft="396.5,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-24,68"
-              Start="0,0"
-              End="-24,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="-4,34" />
-                  <mssgle:LineSegment
-                    End="-20,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20,34"
-                    Point2="-24,34"
-                    Point3="-24,38" />
-                  <mssgle:LineSegment
-                    End="-24,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_Department\Loading\OLE DB 源">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_Department\Loading\OLE DB 目标">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\S_Role\Loading">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\S_Role\Loading\OLE DB 源"
-          TopLeft="358,55" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\S_Role\Loading\OLE DB 目标"
-          TopLeft="356,137" />
-        <EdgeLayout
-          Id="Package\S_Role\Loading.Paths[OLE DB 源输出]"
-          TopLeft="426.5,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_Role\Loading\OLE DB 源">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_Role\Loading\OLE DB 目标">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\S_RoleMenu\Loading">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\S_RoleMenu\Loading\OLE DB 源"
-          TopLeft="418,64" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\S_RoleMenu\Loading\OLE DB 目标"
-          TopLeft="406,158" />
-        <EdgeLayout
-          Id="Package\S_RoleMenu\Loading.Paths[OLE DB 源输出]"
-          TopLeft="481.5,106">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_RoleMenu\Loading\OLE DB 源">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\S_RoleMenu\Loading\OLE DB 目标">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\S_CustomerManager\Loading">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="133,42"
-          Id="Package\S_CustomerManager\Loading\OLE DB 源"
-          TopLeft="447,28" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="145,42"
           Id="Package\S_CustomerManager\Loading\OLE DB 目标"
           TopLeft="447,128" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_CustomerManager\Loading\OLE DB 源"
+          TopLeft="447,28" />
         <EdgeLayout
           Id="Package\S_CustomerManager\Loading.Paths[OLE DB 源输出]"
           TopLeft="516.5,70">
@@ -7513,7 +8891,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7546,10 +8926,154 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\S_Department\Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\S_Department\Loading\OLE DB 目标"
+          TopLeft="300,157" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_Department\Loading\OLE DB 源"
+          TopLeft="330,47" />
+        <EdgeLayout
+          Id="Package\S_Department\Loading.Paths[OLE DB 源输出]"
+          TopLeft="396.5,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24,68"
+              Start="0,0"
+              End="-24,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="-4,34" />
+                  <mssgle:LineSegment
+                    End="-20,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20,34"
+                    Point2="-24,34"
+                    Point3="-24,38" />
+                  <mssgle:LineSegment
+                    End="-24,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_Department\Loading\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_Department\Loading\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\S_Hospital\Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\S_Hospital\Loading\OLE DB 目标"
+          TopLeft="179.166659547223,181.071419320545" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_Hospital\Loading\OLE DB 源"
+          TopLeft="178.333326247004,72.428567728218" />
+        <EdgeLayout
+          Id="Package\S_Hospital\Loading.Paths[OLE DB 源输出]"
+          TopLeft="248.249992897113,114.428567728218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.642851592327"
+              Start="0,0"
+              End="0,59.142851592327">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.142851592327" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_Hospital\Loading\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_Hospital\Loading\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\S_Menu\Loading">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="133,42"
           Id="Package\S_Menu\Loading\OLE DB 源"
@@ -7589,7 +9113,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7610,6 +9136,266 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\S_Menu\Loading\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\S_Role\Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_Role\Loading\OLE DB 源"
+          TopLeft="358,55" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\S_Role\Loading\OLE DB 目标"
+          TopLeft="356,137" />
+        <EdgeLayout
+          Id="Package\S_Role\Loading.Paths[OLE DB 源输出]"
+          TopLeft="426.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_Role\Loading\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_Role\Loading\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\S_RoleMenu\Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\S_RoleMenu\Loading\OLE DB 目标"
+          TopLeft="406,158" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_RoleMenu\Loading\OLE DB 源"
+          TopLeft="418,64" />
+        <EdgeLayout
+          Id="Package\S_RoleMenu\Loading.Paths[OLE DB 源输出]"
+          TopLeft="481.5,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_RoleMenu\Loading\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_RoleMenu\Loading\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\S_User\Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_User\Loading\OLE DB 源"
+          TopLeft="404.166650606527,45.499997675419" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\S_User\Loading\OLE DB 目标"
+          TopLeft="399.999984105429,136.499993026257" />
+        <EdgeLayout
+          Id="Package\S_User\Loading.Paths[OLE DB 源输出]"
+          TopLeft="471.583317355978,87.499997675419">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.999995350838"
+              Start="0,0"
+              End="0,41.499995350838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.499995350838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_User\Loading\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_User\Loading\OLE DB 目标">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\S_UserRole\Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\S_UserRole\Loading\OLE DB 源"
+          TopLeft="485,62" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\S_UserRole\Loading\OLE DB 目标"
+          TopLeft="483,190" />
+        <EdgeLayout
+          Id="Package\S_UserRole\Loading.Paths[OLE DB 源输出]"
+          TopLeft="553.5,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_UserRole\Loading\OLE DB 源">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\S_UserRole\Loading\OLE DB 目标">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
